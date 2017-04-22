@@ -1,2 +1,3 @@
 # LBD
-Projeto de rede social para web cuja função é reunir listas de desejos de produtos de lojas vituais.
+Este projeto foi criado para o trabalho semestral da disciplina de Laboratório de Banco de Dados do curso de Sistemas de Informação da EACH-USP.
+
