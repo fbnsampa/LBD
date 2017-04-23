@@ -90,7 +90,7 @@ CREATE TABLE public.movie (
   genre     varchar(45),
   runtime   integer NOT NULL,
   product   integer NOT NULL,
-  movie_id  integer NOT NULL PRIMARY KEY,
+  movie_id  integer NOT NULL,
   /* Keys */
   CONSTRAINT movie_pkey
     PRIMARY KEY (movie_id),
@@ -154,7 +154,7 @@ CREATE TABLE public.music (
   genre     varchar(45),
   "length"  integer,
   product   integer NOT NULL,
-  music_id  integer NOT NULL PRIMARY KEY,
+  music_id  integer NOT NULL,
   /* Keys */
   CONSTRAINT music_pkey
     PRIMARY KEY (music_id),
