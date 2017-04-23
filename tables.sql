@@ -1,7 +1,7 @@
 --Table: public.product
 
 CREATE TABLE public.product (
-  product_id    integer NOT NULL PRIMARY KEY,
+  product_id    integer NOT NULL,
   "name"        varchar(45) NOT NULL,
   release_year  smallint,
   media_format  varchar(45) NOT NULL,
@@ -22,7 +22,7 @@ ALTER TABLE public.product
 --Table: public.author
 
 CREATE TABLE public.author (
-  author_id         integer NOT NULL PRIMARY KEY,
+  author_id         integer NOT NULL,
   name_first        varchar(45) NOT NULL,
   name_last         varchar(45) NOT NULL,
   profession_title  varchar(45),
@@ -109,7 +109,7 @@ ALTER TABLE public.movie
 CREATE TABLE public.actor (
   name_first  varchar(45) NOT NULL,
   name_last   varchar(45) NOT NULL,
-  actor_id    integer NOT NULL PRIMARY KEY,
+  actor_id    integer NOT NULL,
   photo       varchar(140),
   /* Keys */
   CONSTRAINT actor_pkey
@@ -262,7 +262,7 @@ ALTER TABLE public.ads
 --Table: public.user
 
 CREATE TABLE public."user" (
-  user_id     integer NOT NULL PRIMARY KEY,
+  user_id     integer NOT NULL,
   username    varchar(45) NOT NULL,
   email       varchar(45) NOT NULL,
   "password"  varchar(45) NOT NULL,
