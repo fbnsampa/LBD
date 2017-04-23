@@ -215,6 +215,7 @@ CREATE TABLE public.product_store (
   product  integer NOT NULL,
   store    integer NOT NULL,
   price    money NOT NULL,
+    -- df: float=uniform alpha=10.0 beta=999.99
   url      varchar(140) NOT NULL,
   /* Keys */
   CONSTRAINT product_store_pkey
