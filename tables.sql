@@ -1,15 +1,13 @@
 --Table: public.product
 
 CREATE TABLE public.product (
-  product_id       integer NOT NULL,
-  "name"           varchar(45) NOT NULL,
-  release_year     smallint,
-  media_format     varchar(45) NOT NULL,
-  product_image_1  varchar(140),
-  product_image_2  varchar(140),
-  product_image_3  varchar(140),
-  product_image_4  varchar(140),
-  product_image_5  varchar(140),
+  product_id    integer NOT NULL PRIMARY KEY,
+  "name"        varchar(45) NOT NULL,
+  release_year  smallint,
+  media_format  varchar(45) NOT NULL,
+  image_thumb   varchar(140),
+  image_md      varchar(140),
+  image_hd      varchar(140),
   /* Keys */
   CONSTRAINT product_pkey
     PRIMARY KEY (product_id)
@@ -24,11 +22,11 @@ ALTER TABLE public.product
 --Table: public.author
 
 CREATE TABLE public.author (
-  author_id         integer NOT NULL,
+  author_id         integer NOT NULL PRIMARY KEY,
   name_first        varchar(45) NOT NULL,
-  name_middle       varchar(45),
   name_last         varchar(45) NOT NULL,
   profession_title  varchar(45),
+  photo             varchar(140),
   /* Keys */
   CONSTRAINT author_pkey
     PRIMARY KEY (author_id)
@@ -109,10 +107,10 @@ ALTER TABLE public.movie
 --Table: public.actor
 
 CREATE TABLE public.actor (
-  name_first   varchar(45) NOT NULL,
-  name_middle  varchar(45),
-  name_last    varchar(45) NOT NULL,
-  actor_id     integer NOT NULL,
+  name_first  varchar(45) NOT NULL,
+  name_last   varchar(45) NOT NULL,
+  actor_id    integer NOT NULL PRIMARY KEY,
+  photo       varchar(140),
   /* Keys */
   CONSTRAINT actor_pkey
     PRIMARY KEY (actor_id)
@@ -264,13 +262,13 @@ ALTER TABLE public.ads
 --Table: public.user
 
 CREATE TABLE public."user" (
-  user_id      integer NOT NULL,
-  username     varchar(45) NOT NULL,
-  email        varchar(45) NOT NULL,
-  "password"   varchar(45) NOT NULL,
-  name_first   varchar(45) NOT NULL,
-  name_middle  varchar(45),
-  name_last    varchar(45) NOT NULL,
+  user_id     integer NOT NULL PRIMARY KEY,
+  username    varchar(45) NOT NULL,
+  email       varchar(45) NOT NULL,
+  "password"  varchar(45) NOT NULL,
+  name_first  varchar(45) NOT NULL,
+  name_last   varchar(45) NOT NULL,
+  photo       varchar(140),
   /* Keys */
   CONSTRAINT user_pkey
     PRIMARY KEY (user_id)
