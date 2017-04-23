@@ -1,7 +1,7 @@
 # LBD
 Este projeto foi criado para o trabalho semestral da disciplina de Laboratório de Banco de Dados do curso de Sistemas de Informação da EACH-USP.
 
-## Arguivos:
+## Arquivos:
 * tables.sql - cria as tabelas do schema
 * test.sql - popula com tuplas de teste
 * clear.sql - comando de limpar schema public
