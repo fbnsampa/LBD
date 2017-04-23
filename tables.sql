@@ -351,9 +351,9 @@ ALTER TABLE public.wishlist
   OWNER TO postgres;
  
  
---Table: public.whishlist_product
+--Table: public.wishlist_product
 
-CREATE TABLE public.whishlist_product (
+CREATE TABLE public.wishlist_product (
   wishlist        integer NOT NULL,
   product         integer NOT NULL,
   date_registred  date NOT NULL,
