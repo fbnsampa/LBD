@@ -70,13 +70,11 @@ CREATE TABLE public.book (
   product    integer NOT NULL,
   /* Keys */
   CONSTRAINT book_pkey
-    PRIMARY KEY (isbn, product),
+    PRIMARY KEY (isbn),
   /* Foreign keys */
   CONSTRAINT product_fk
     FOREIGN KEY (product)
     REFERENCES public.product(product_id)
-    DEFERRABLE
-    INITIALLY IMMEDIATE
 ) WITH (
     OIDS = FALSE
   );
@@ -88,13 +86,14 @@ ALTER TABLE public.book
 --Table: public.movie
 
 CREATE TABLE public.movie (
-  studio   varchar(45),
-  genre    varchar(45),
-  runtime  integer NOT NULL,
-  product  integer NOT NULL,
+  studio    varchar(45),
+  genre     varchar(45),
+  runtime   integer NOT NULL,
+  product   integer NOT NULL,
+  movie_id  integer NOT NULL PRIMARY KEY,
   /* Keys */
   CONSTRAINT movie_pkey
-    PRIMARY KEY (product),
+    PRIMARY KEY (movie_id),
   /* Foreign keys */
   CONSTRAINT product_fk
     FOREIGN KEY (product)
@@ -137,7 +136,9 @@ CREATE TABLE public.movie_cast (
     REFERENCES public.actor(actor_id), 
   CONSTRAINT movie_fk
     FOREIGN KEY (movie)
-    REFERENCES public.movie(product)
+    REFERENCES public.movie(movie_id)
+    DEFERRABLE
+    INITIALLY IMMEDIATE
 ) WITH (
     OIDS = FALSE
   );
@@ -153,9 +154,10 @@ CREATE TABLE public.music (
   genre     varchar(45),
   "length"  integer,
   product   integer NOT NULL,
+  music_id  integer NOT NULL PRIMARY KEY,
   /* Keys */
   CONSTRAINT music_pkey
-    PRIMARY KEY (product),
+    PRIMARY KEY (music_id),
   /* Foreign keys */
   CONSTRAINT product_fk
     FOREIGN KEY (product)
@@ -181,7 +183,7 @@ CREATE TABLE public.tracklist (
   /* Foreign keys */
   CONSTRAINT album_fk
     FOREIGN KEY (album)
-    REFERENCES public.music(product)
+    REFERENCES public.music(music_id)
 ) WITH (
     OIDS = FALSE
   );
