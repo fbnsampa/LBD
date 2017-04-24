@@ -360,7 +360,7 @@ CREATE TABLE public.wishlist_product (
   priority_order  integer,
   already_won     boolean NOT NULL DEFAULT false,
   /* Keys */
-  CONSTRAINT whishlist_product_pkey
+  CONSTRAINT wishlist_product_pkey
     PRIMARY KEY (wishlist, product),
   /* Foreign keys */
   CONSTRAINT product_fk
@@ -373,5 +373,5 @@ CREATE TABLE public.wishlist_product (
     OIDS = FALSE
   );
 
-ALTER TABLE public.whishlist_product
+ALTER TABLE public.wishlist_product
   OWNER TO postgres;
